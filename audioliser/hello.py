@@ -6,14 +6,15 @@ import pysynth_b as psb
 from pydub import AudioSegment
 
 #generates a wav file based on the streangth and names of available wifi networks
-def generate_a_wav_file(list_of_networks):
+def generate_a_wav_file(network):
     wav_file = []
 
-    for network in list_of_networks:
-        process_input_values(network)
+    process_input_values(network)
 
-        for i in range(10):
-            wav_file.append(generate_note())
+    for i in range(30):
+
+        wav_file.append(generate_note())
+
     return wav_file
 
 
@@ -59,16 +60,22 @@ def generate_note():
 
     return ((note + scale), length)
 
-def create_and_save_wav(list_of_networks, url):
+def create_and_save_wav(list_of_net_name_pairs):
 
-    wav = generate_a_wav_file(list_of_networks)
 
-    psb.make_wav(wav, fn = url + ".wav", leg_stac = .7, bpm = 250)
+    list_of_wavs = []
+    for net_name_pair in list_of_net_name_pairs:
 
+        network, url = net_name_pair
+        wav = generate_a_wav_file(network)
+
+        wav_file = psb.make_wav(wav, fn = url + ".wav", leg_stac = .7, bpm = 250)
+        list_of_wavs.append(wav_file)
+
+    return list_of_wavs
 
 if __name__ == "__main__":
-    list_of_networks = ["eduram"]
-    url = "testie"
-    create_and_save_wav(list_of_networks, url)
+    list_of_net_name_pairs = [("eduram", "testie")]
+    create_and_save_wav(list_of_net_name_pairs)
 
 
