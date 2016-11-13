@@ -18,8 +18,6 @@ public class importfile : MonoBehaviour {
 		//_audio = www2.GetAudioClip(false, false);
 		_audio = www.GetAudioClip(false, false);
 
-
-
 		AudioSource audio = GetComponent<AudioSource> ();
 		audio.clip = _audio;
 		audio.spatialBlend = 1;
