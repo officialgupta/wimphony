@@ -89,7 +89,7 @@ def create_and_save_wav(list_of_net_name_pairs):
     return list_of_wavs
 
 if __name__ == "__main__":
-    list_of_net_name_pairs = [("tesles", "teste5"), ("just_another_test", "ver_important"), ("bagel", "not_important"), ("imaginy", "toasities"), ("guh", "no_sleep")]
+    list_of_net_name_pairs = [("noone", "file1"), ("agnieszka", "file2"), ("cameron", "file3"), ("adam", "file4"), ("mayank", "file5")]
     create_and_save_wav(list_of_net_name_pairs)
 
 
