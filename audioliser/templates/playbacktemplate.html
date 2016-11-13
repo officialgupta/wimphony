@@ -1,11 +1,10 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>wimphony</title>
+	<title>successful</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Geany 1.24.1" />
 	<link rel="stylesheet" type="text/css" href="static/style.css">
@@ -17,20 +16,14 @@
 	<p>wimphony is a wi fi symphony. Choose a network, Hear the sound! </p>
 	</div>
 	<div class="bodystuff">
-	<ul>
-		{% for song in songlist %}
-		<li><a href="static/{{song.url}}.wav">{{song.name}} at {{song.loc}}:</a> 
-		
-		<audio controls>
-			<source src="static/{{song.url}}.wav" type="audio/wav">
-		</audio>
-		
-		</li>
+	{% for song in songlist %}
+	<p>{{song.name}}
+	<audio controls>
+			<source src="static/{{song.id}}.wav" type="audio/wav">
+		</audio></p>
 		{% endfor %}
-		<form method="GET" action="/musearch"><input type="text" name="field"/> <select name="q"> <option value="name">name</option> <option value="user">user</option></select><submit value="Submit"></form>
-	</ul>
-	
 	</div>
+		
 </body>
 
 </html>
