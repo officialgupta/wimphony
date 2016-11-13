@@ -1,9 +1,6 @@
-from pyo import *
 import pdb
-import midi
 import random
 import pysynth_b as psb
-from pydub import AudioSegment
 
 #generates a wav file based on the streangth and names of available wifi networks
 def generate_a_wav_file(list_of_networks):
