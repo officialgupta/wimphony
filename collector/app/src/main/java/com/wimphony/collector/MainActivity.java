@@ -17,6 +17,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+
 import java.util.List;
 import java.util.jar.Manifest;
 
@@ -60,12 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final Handler h = new Handler();
-        final int scanDelay = 5000;
-
         if (!permissionCheck(android.Manifest.permission.ACCESS_WIFI_STATE) ||
                 !permissionCheck(android.Manifest.permission.CHANGE_WIFI_STATE) ||
-                !permissionCheck(android.Manifest.permission.ACCESS_COARSE_LOCATION))
+                !permissionCheck(android.Manifest.permission.ACCESS_COARSE_LOCATION) ||
+                !permissionCheck(android.Manifest.permission.ACCESS_FINE_LOCATION))
         {
             Log.e("MainActivity", "fatal error: permissions not granted");
             this.finish();
@@ -73,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
         else {
             Log.d("welp", "that happened");
         }
+
+        GoogleApiClient mGoogleApiClient = null;
+
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+
+        final Handler h = new Handler();
+        final int scanDelay = 5000;
 
         h.postDelayed(new Runnable(){
             public void run(){
@@ -95,6 +109,5 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
     }
 }
