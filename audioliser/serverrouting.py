@@ -71,7 +71,7 @@ def music():
 				returner=returner + "htpp://www.wimphony.com/static/" + str(record.id) +".wav,"
 			return returner[:-1]
 		elif field=="user":
-			userid=Users.query.filter_by(username=q).first()
+			userid=User.query.filter_by(username=q).first()
 			if userid is None:
 				return "none"
 			display = SoundEntry.query.filter_by(user_id=userid)
