@@ -1,6 +1,5 @@
 import random
 import pysynth_b as psb
-from pydub import AudioSegment
 
 def generate_abc_notation(network):
     """ Generates a sequence of notes that
