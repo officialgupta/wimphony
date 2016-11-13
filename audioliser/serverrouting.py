@@ -3,7 +3,7 @@ from flask import Flask, request,render_template, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from models import db,User,SoundEntry
 import random
-from generate import create_and_save_wav
+from hello import create_and_save_wav
 
 class urlnameloc(object):
 	def __init__(self, url,name,loc):
@@ -53,7 +53,7 @@ def enter():
 		db.session.add(soundentryrecord)
 		db.session.commit()
 		create_and_save_wav([soundentryrecord.name],"static/"+str(soundentryrecord.id))
-		return render_template('playbacktemplate.html', songs=[soundentryrecord])
+		return render_template('playbacktemplate.html', songlist=[soundentryrecord])
 		
 		
 		
