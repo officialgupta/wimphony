@@ -15,8 +15,15 @@
 	<p>wimphony is a wi fi symphony. Choose a location, Hear the sound! </p>
 	<ul>
 		{% for song in songlist %}
-		<li><a href="static/{{song.url}}.wav">{{song.name}} at {{song.loc}}</a></li>
+		<li><a href="static/{{song.url}}.wav">{{song.name}} at {{song.loc}}:</a> 
+		
+		<audio controls>
+			<source src="static/{{song.url}}.wav" type="audio/wav">
+		</audio>
+		
+		</li>
 		{% endfor %}
+		<form method="GET" action="/musearch"><input type="text" name="field"/> <select name="q"> <option value="name">name</option> <option value="user">user</option></select><submit value="Submit"></form>
 	</ul>
 </body>
 
