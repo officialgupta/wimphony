@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{7B1C7108-C5E3-7FB9-F12F-5B5886354E70}") = "wimphony", "Assembly-CSharp.csproj", "{176C815A-53F6-6996-7885-499FC86FE14C}"
+EndProject
+Project("{7B1C7108-C5E3-7FB9-F12F-5B5886354E70}") = "wimphony", "Assembly-CSharp-Editor.csproj", "{69C86A85-20A1-854F-1463-0FA43DB2F5DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{176C815A-53F6-6996-7885-499FC86FE14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176C815A-53F6-6996-7885-499FC86FE14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176C815A-53F6-6996-7885-499FC86FE14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176C815A-53F6-6996-7885-499FC86FE14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C86A85-20A1-854F-1463-0FA43DB2F5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C86A85-20A1-854F-1463-0FA43DB2F5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C86A85-20A1-854F-1463-0FA43DB2F5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C86A85-20A1-854F-1463-0FA43DB2F5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -214,3 +214,12 @@ sysinfo.txt
 
 # Wav files (no gitlfs)
 *.wav
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# vim
+*.swp
+*.swo
